@@ -18,4 +18,5 @@ data class PostalAddress(
         val city: String,
         val postcode: String,
         val region: String,
+        val neighborhood: String,
         val country: String)

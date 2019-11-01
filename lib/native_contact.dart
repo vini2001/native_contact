@@ -81,6 +81,7 @@ class PostalAddress {
     String postcode;
     String region;
     String country;
+    String neighborhood;
 
     PostalAddress({
         this.label,
@@ -88,7 +89,8 @@ class PostalAddress {
         this.city,
         this.postcode,
         this.region,
-        this.country
+        this.country,
+        this.neighborhood
     });
 
     PostalAddress.fromMap(Map map) {
@@ -98,6 +100,7 @@ class PostalAddress {
         postcode = map["postcode"];
         region = map["region"];
         country = map["country"];
+        neighborhood = map["neighborhood"];
     }
 
     static _toMap(PostalAddress postalAddress) => {
@@ -106,7 +109,8 @@ class PostalAddress {
         "city": postalAddress.city,
         "postcode": postalAddress.postcode,
         "region": postalAddress.region,
-        "country": postalAddress.country
+        "country": postalAddress.country,
+        "neighborhood": postalAddress.neighborhood
     };
 
 }

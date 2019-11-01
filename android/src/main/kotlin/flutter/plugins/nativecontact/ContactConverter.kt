@@ -80,7 +80,8 @@ fun postalAddressToMap(postalAddress: PostalAddress): Map<String, String> {
         postalAddress.city to "city",
         postalAddress.postcode to "postcode",
         postalAddress.region to "region",
-        postalAddress.country to "country"
+            postalAddress.country to "country",
+            postalAddress.neighborhood to "neighborhood"
     )
 }
 
@@ -91,14 +92,16 @@ fun mapToPostalAddress(map: Map<String, Any>): PostalAddress {
     val postcode = valueOrDefault(map["postcode"])
     val region = valueOrDefault(map["region"])
     val country = valueOrDefault(map["country"])
+    val neighborhood = valueOrDefault(map["neighborhood"])
 
     return PostalAddress(
-        label = label,
-        street = street,
-        city = city,
-        postcode = postcode,
-        region = region,
-        country = country
+            label = label,
+            street = street,
+            city = city,
+            postcode = postcode,
+            region = region,
+            country = country,
+            neighborhood = neighborhood
     );
 }
 
